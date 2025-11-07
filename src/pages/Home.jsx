@@ -93,11 +93,7 @@ export default function Home() {
                 
                 {/* Main photo container */}
                 <div className="w-full h-full bg-gray-900 border-4 border-white overflow-hidden">
-                  <img
-                    src="./kavin.png"
-                    alt="Kavin"
-                    className="w-full h-full object-cover"
-                  />
+                  <img src="/kavin.png" alt="Kavin" className="w-full h-full object-cover" />
                 </div>
               </div>
             </motion.div>
