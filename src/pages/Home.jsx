@@ -92,11 +92,12 @@ export default function Home() {
                 <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-4 border-b-4 border-blue-600"></div>
                 
                 {/* Main photo container */}
-                <div className="w-full h-full bg-gray-900 border-4 border-white flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">📸</div>
-                    <div className="text-sm text-gray-500 font-bold uppercase">Your Photo Here</div>
-                  </div>
+                <div className="w-full h-full bg-gray-900 border-4 border-white overflow-hidden">
+                  <img
+                    src="./kavin.png"
+                    alt="Kavin"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </motion.div>
