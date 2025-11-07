@@ -208,15 +208,7 @@ export default function Projects() {
                       )}
                     </div>
 
-                    {/* Image Placeholder */}
-                    <div className="lg:col-span-1">
-                      <div className="aspect-square bg-gray-900 border-2 border-gray-800 flex items-center justify-center">
-                        <div className="text-center text-gray-700">
-                          <div className="text-4xl mb-2">🖼️</div>
-                          <div className="text-xs font-bold uppercase">Project Visual</div>
-                        </div>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
               </div>
