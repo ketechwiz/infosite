@@ -17,7 +17,7 @@ export default function Home() {
     {
       title: "Arc",
       description: "AI platform giving solo founders a full autonomous team. Built at Y Combinator's Agent Jam 2025.",
-      link: "https://getarc.pro/landing",
+      link: "https://getarc.pro",
       tag: "3RD PLACE YC",
       color: "blue",
     },
@@ -190,9 +190,14 @@ export default function Home() {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                 </div>
 
-                {/* Image placeholder */}
-                <div className="mt-6 aspect-video bg-gray-900 border-2 border-gray-800 flex items-center justify-center">
-                  <span className="text-gray-600 text-sm font-bold">PROJECT VISUAL</span>
+                {/* Project iframe */}
+                <div className="mt-6 aspect-video bg-gray-900 border-2 border-gray-800 overflow-hidden">
+                  <iframe 
+                    src={project.link} 
+                    className="w-full h-full"
+                    title={`${project.title} preview`}
+                    loading="lazy"
+                  />
                 </div>
               </motion.a>
             ))}
