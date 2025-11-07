@@ -88,16 +88,15 @@ export default function Home() {
             >
               <div className="relative aspect-square max-w-md mx-auto">
                 {/* Corner accents */}
-                <div className="absolute -top-4 -left-4 w-24 h-24 border-l-4 border-t-4 border-yellow-400 z-10"></div>
-                <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-4 border-b-4 border-blue-600 z-10"></div>
+                <div className="absolute -top-4 -left-4 w-24 h-24 border-l-4 border-t-4 border-yellow-400"></div>
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 border-r-4 border-b-4 border-blue-600"></div>
                 
                 {/* Main photo container */}
-                <div className="w-full h-full bg-gray-900 border-4 border-white overflow-hidden">
-                  <img 
-                    src="/kavin.png" 
-                    alt="Kavin Elangovan"
-                    className="w-full h-full object-cover"
-                  />
+                <div className="w-full h-full bg-gray-900 border-4 border-white flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">📸</div>
+                    <div className="text-sm text-gray-500 font-bold uppercase">Your Photo Here</div>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -181,10 +180,9 @@ export default function Home() {
                 <div className="mt-6 aspect-video bg-gray-900 border-2 border-gray-800 overflow-hidden">
                   <iframe 
                     src={project.link} 
-                    className="w-full h-full pointer-events-none"
+                    className="w-full h-full"
                     title={`${project.title} preview`}
                     loading="lazy"
-                    sandbox="allow-same-origin"
                   />
                 </div>
               </motion.a>
