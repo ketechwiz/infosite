@@ -27,21 +27,7 @@ export default function Home() {
       link: "https://www.envirocast.org/",
       tag: "QUANTUM AI",
       color: "yellow",
-    },
-    {
-      title: "OncoAI",
-      description: "Universal cancer detection across multiple imaging modalities. Published at IEEE ISBI 2025.",
-      link: "https://oncoai.org",
-      tag: "HEALTHCARE",
-      color: "blue",
-    },
-    {
-      title: "OculAI",
-      description: "Mobile AI retina tracker revolutionizing ocular and systemic healthcare through eyes.",
-      link: "https://oculai.org",
-      tag: "MEDICAL AI",
-      color: "yellow",
-    },
+    }
   ];
 
   return (
