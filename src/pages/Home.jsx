@@ -57,7 +57,7 @@ export default function Home() {
             >
               <div className="mb-6">
                 <span className="inline-block px-4 py-2 bg-yellow-400 text-black font-black text-sm uppercase tracking-wider">
-                  Available for Opportunities
+                  Technical Developer
                 </span>
               </div>
 
