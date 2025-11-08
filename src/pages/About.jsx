@@ -163,8 +163,16 @@ export default function About() {
                     <span className="px-3 py-1 bg-blue-600 text-white font-black text-sm">35/36</span>
                   </div>
                   <div className="flex justify-between items-center">
+                    <span className="font-medium">SAT</span>
+                    <span className="px-3 py-1 bg-blue-600 text-white font-black text-sm">1560/1600</span>
+                  </div>
+                  <div className="flex justify-between items-center">
+                    <span className="font-medium">PSAT 10</span>
+                    <span className="px-3 py-1 bg-blue-600 text-white font-black text-sm">1470/1520</span>
+                  </div>
+                  <div className="flex justify-between items-center">
                     <span className="font-medium">PSAT 8/9</span>
-                    <span className="px-3 py-1 bg-blue-600 text-white font-black text-sm">1440</span>
+                    <span className="px-3 py-1 bg-blue-600 text-white font-black text-sm">1440/1440</span>
                   </div>
                 </div>
               </div>
