@@ -198,14 +198,6 @@ export default function Projects() {
                         ))}
                       </div>
 
-                      {project.link && (
-                        <a href={project.link} target="_blank" rel="noopener noreferrer">
-                          <Button className="bg-yellow-400 hover:bg-yellow-500 text-black font-black">
-                            VISIT PROJECT
-                            <ExternalLink className="w-4 h-4 ml-2" />
-                          </Button>
-                        </a>
-                      )}
                     </div>
 
                     
