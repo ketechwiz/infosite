@@ -12,7 +12,7 @@ export default function About() {
 
   const experiences = [
     {
-      role: "Co-Founder & Technical Lead",
+      role: "Co-Founder & CMO",
       organization: "Arc",
       period: "2025",
       location: "San Francisco, CA (YC Agent Jam)",
