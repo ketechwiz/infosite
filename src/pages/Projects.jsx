@@ -78,14 +78,14 @@ export default function Projects() {
       tech: ["Full-Stack", "AI Integration"],
     },
     {
+      title: "EnviroTrack",
+      description: "Resource usage tracker extension utilizing advanced quantum AI.",
+      tech: ["Quantum Computing", "AI Integration", "Full-Stack"],
+    },
+    {
       title: "STAR Education",
       description: "Co-founded nonprofit providing free globally-accessible tutoring. Leading technical infrastructure since 2022.",
       tech: ["EdTech", "Data Analytics", "Leadership"],
-    },
-    {
-      title: "NASA Space Apps",
-      description: "Global Nominee at NASA International Space Apps Challenge for innovative solution.",
-      tech: ["Quantum GIS", "3D Modeling", "Full-Stack"],
     },
   ];
 
