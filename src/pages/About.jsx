@@ -41,6 +41,12 @@ export default function About() {
       description: "Contributing to city-wide youth engagement on Educational Equity and Mental Health committees.",
     },
     {
+      role: "1st International",
+      organization: "CVHS Hacks",
+      period: "November 2025",
+      description: "Developed an application for resource usage tracking using advanced quantum AI.",
+    },
+    {
       role: "Co-Founder & CTO",
       organization: "STAR Education (Nonprofit)",
       period: "Aug 2022 - Present",
