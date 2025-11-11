@@ -79,7 +79,7 @@ export default function Projects() {
     },
     {
       title: "EnviroTrack",
-      description: "Resource usage tracker extension utilizing advanced quantum AI.",
+      description: "Cross-browser-compatible resource usage tracker extension utilizing advanced quantum AI.",
       tech: ["Quantum Computing", "AI Integration", "Full-Stack"],
     },
     {
