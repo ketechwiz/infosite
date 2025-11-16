@@ -73,7 +73,7 @@ export default function About() {
       courses: ["CS50", "AI with Python", "Data Science", "Statistics", "Programming with R"],
     },
     {
-      title: "University of Michigan (Coursera)",
+      title: "University of Michigan",
       courses: ["Python for Everybody", "Data Structures", "Web Data", "Databases"],
     },
     {
