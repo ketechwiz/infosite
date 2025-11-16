@@ -41,8 +41,8 @@ export default function About() {
       description: "Contributing to city-wide youth engagement on Educational Equity and Mental Health committees.",
     },
     {
-      role: "1st Place Internationally",
-      organization: "CVHS Hacks",
+      role: "International 1st Place",
+      organization: "CVHS Hacks Global Competition",
       period: "November 2025",
       description: "Developed an application for resource usage tracking using advanced quantum AI.",
     },
