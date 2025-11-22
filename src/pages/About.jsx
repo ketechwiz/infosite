@@ -47,6 +47,12 @@ export default function About() {
       description: "Developed an application for resource usage tracking using advanced quantum AI.",
     },
     {
+      role: "Regional 2nd Place",
+      organization: "Texas State Congressional App Challenge",
+      period: "November 2025",
+      description: "Presented a full environment-focused quantum-integrated interface for predictive analysis, AI training, API interfacing and more.",
+    },
+    {
       role: "Co-Founder & CTO",
       organization: "STAR Education (Nonprofit)",
       period: "Aug 2022 - Present",
