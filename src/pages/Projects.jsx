@@ -20,7 +20,7 @@ export default function Projects() {
       ],
       tech: ["AI Agents", "Full-Stack", "Real-time Collaboration", "LLMs"],
       link: "https://getarc.pro/landing",
-      tag: "FEATURED",
+      tag: "AGENTIC",
     },
     {
       title: "EnviroCast",
