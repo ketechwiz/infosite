@@ -27,6 +27,7 @@ export default function Projects() {
       tagline: "Quantum-Powered Environmental Intelligence",
       description:
         "AI-driven quantum environmental intelligence platform that personalizes weather and pollution insights based on analysis from IBM Quantum. Leading end-to-end technical vision from data infrastructure to adaptive alert systems.",
+      achievement: "NASA Global Nominee",
       highlights: [
         "Quantum computing integration via IBM Quantum",
         "Personalized environmental insights and alerts",
