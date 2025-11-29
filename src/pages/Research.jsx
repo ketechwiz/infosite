@@ -62,25 +62,24 @@ export default function Research() {
 
   const awards = [
     {
+      title: "3rd Internationally, YC Agent Jam '25",
+      issuer: "Metorial AI & Y Combinator",
+      date: "November 2025",
+    },
+    {
+      title: "State Qualifier, Creative Problem-Solving",
+      issuer: "Texas HOSA",
+      date: "November 2025",
+    },
+    {
       title: "Gold Medal for Biomedical Engineering Research",
       issuer: "U.S. Navy Office of Naval Research",
       date: "September 2025",
-      description: "Texas Science & Engineering Fair",
     },
     {
-      title: "Finalist, Biomedical Engineering Division",
-      issuer: "Texas Science & Engineering Fair",
-      date: "September 2025",
-    },
-    {
-      title: "2nd Place, Biomedical Engineering Division",
-      issuer: "Science & Engineering Fair of Houston",
-      date: "February 2025",
-    },
-    {
-      title: "1st Place, State Mathematics Championships",
-      issuer: "National Beta Club",
-      date: "March 2025",
+      title: "Youth Training Advocate",
+      issuer: "UNICEF",
+      date: "July 2025",
     },
     {
       title: "Semifinalist, EdTalk Youth Innovation Challenge",
@@ -88,9 +87,21 @@ export default function Research() {
       date: "June 2025",
     },
     {
-      title: "Youth Training Advocate",
-      issuer: "UNICEF",
-      date: "July 2025",
+      title: "1st Place, State Mathematics Championships",
+      issuer: "National Beta Club",
+      date: "March 2025",
+    },
+    
+    {
+      title: "Finalist, Biomedical Engineering Division",
+      issuer: "Texas Science & Engineering Fair",
+      date: "March 2025",
+    },
+    
+    {
+      title: "2nd Place, Biomedical Engineering Division",
+      issuer: "Science & Engineering Fair of Houston",
+      date: "February 2025",
     },
     {
       title: "President's Volunteer Service Award - Gold",
