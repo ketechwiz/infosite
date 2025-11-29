@@ -4,6 +4,25 @@ import { Award } from "lucide-react";
 
 export default function Research() {
   const conferences = [
+    
+    {
+      name: "Symposium on AI in Learning Health Systems (SAIL2025)",
+      date: "May 2025",
+      location: "Puerto Rico",
+      type: "Poster Presenter & Travel Award Winner",
+      organizers: "Harvard Medical School & New England Journal of Medicine",
+      presentations: [
+        {
+          title: "OncoAI: Integrating a Computationally Efficient Deep Learning Model into a Multi-Platform Universally Accessible Application for Accurate Detection of Multiple Cancers Across Diverse Imaging Modalities",
+          award: "Travel Award Winner",
+        },
+        {
+          title: "Eyes as Windows to Health: Integrating an Efficient, Generalizable AI Model into a Simple Mobile AI Retina Tracker (SMART) to Revolutionize Ocular and Systemic Healthcare",
+          award: "Travel Award Winner",
+        },
+      ],
+    },
+    
     {
       name: "ENDO2025 (Endocrine Society)",
       date: "July 2025",
@@ -20,20 +39,13 @@ export default function Research() {
       ],
     },
     {
-      name: "Symposium on AI in Learning Health Systems (SAIL2025)",
-      date: "May 2025",
-      location: "Puerto Rico",
-      type: "Poster Presenter & Travel Award Winner",
-      organizers: "Harvard Medical School & New England Journal of Medicine",
+      name: "Rice University AI in Health Conference (AIHC 2025)",
+      date: "September 2025",
+      location: "Houston, TX",
+      type: "Live Presentation",
       presentations: [
-        {
-          title: "OncoAI: Integrating a Computationally Efficient Deep Learning Model into a Multi-Platform Universally Accessible Application for Accurate Detection of Multiple Cancers Across Diverse Imaging Modalities",
-          award: "Travel Award Winner",
-        },
-        {
-          title: "Eyes as Windows to Health: Integrating an Efficient, Generalizable AI Model into a Simple Mobile AI Retina Tracker (SMART) to Revolutionize Ocular and Systemic Healthcare",
-          award: "Travel Award Winner",
-        },
+        { title: "A novel AI powered HEART: Hypertension Eye Assessment and Risk Tracker for Equitable Detection and Risk Stratification of Hypertensive Retinopathy" },
+        { title: "Simple Mobile AI Retina Tracker, SMART, for equitable eyecare and revolutionizing healthcare" },
       ],
     },
     {
