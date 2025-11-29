@@ -62,11 +62,6 @@ export default function Research() {
 
   const awards = [
     {
-      title: "3rd Internationally, YC Agent Jam '25",
-      issuer: "Metorial AI & Y Combinator",
-      date: "November 2025",
-    },
-    {
       title: "State Qualifier, Creative Problem-Solving",
       issuer: "Texas HOSA",
       date: "November 2025",
