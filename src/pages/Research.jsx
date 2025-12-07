@@ -287,28 +287,52 @@ export default function Research() {
               <h4 className="text-2xl font-black mb-6 text-black">OncoAI NEWS ARTICLES</h4>
               <div className="space-y-3">
                 <a
-                  href="https://www.usnews.com/news/health-news/articles/2024-06-04/ai-tool-detects-cancer-with-nearly-perfect-accuracy"
+                  href="https://www.miragenews.com/ai-tool-speeds-up-accurate-endocrine-cancer-1495524/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 text-sm transition-colors"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
                 >
-                  U.S. News & World Report: AI Tool Detects Cancer
+                  Mirage News - 7/14/25
                 </a>
                 <a
-                  href="https://example.com/oncoai-article-2"
+                  href="https://www.digitalhealthnews.com/ai-powered-clinical-system-enhances-endocrine-cancer-detection"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 text-sm transition-colors"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
                 >
-                  Medical Journal Feature
+                  Digital Health News - 7/14/25
                 </a>
                 <a
-                  href="https://example.com/oncoai-article-3"
+                  href="https://www.msn.com/en-gb/health/other/novel-ai-application-diagnoses-endocrine-cancers-with-speed-and-accuracy/ar-AA1Ixng9"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 text-sm transition-colors"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
                 >
-                  IEEE ISBI Coverage
+                  MSN - 7/13/25
+                </a>
+                <a
+                  href="https://medicalxpress.com/news/2025-07-ai-powered-application-enables-clinicians.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  MedicalXPress - 7/13/25
+                </a>
+                <a
+                  href="https://www.news-medical.net/news/20250713/Novel-AI-application-diagnoses-endocrine-cancers-with-speed-and-accuracy.aspx"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  NewsMedical - 7/13/25
+                </a>
+                <a
+                  href="https://www.endocrine.org/news-and-advocacy/news-room/endo-annual-meeting/endo-2025-press-releases/sethuraj-onco-press-release"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  Endocrine Society - 7/13/25
                 </a>
               </div>
             </div>
@@ -318,28 +342,84 @@ export default function Research() {
               <h4 className="text-2xl font-black mb-6 text-black">OculAI NEWS ARTICLES</h4>
               <div className="space-y-3">
                 <a
-                  href="https://example.com/oculai-article-1"
+                  href="https://www.usnews.com/news/health-news/articles/2025-07-16/ai-can-help-screen-for-vision-destroying-diabetic-eye-disease"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 text-sm transition-colors"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
                 >
-                  Healthcare Tech Innovation Feature
+                  USNews - 7/16/25
                 </a>
                 <a
-                  href="https://example.com/oculai-article-2"
+                  href="https://medicalupdateonline.com/2025/07/ai-powered-mobile-retina-tracker-screens-for-diabetic-eye-disease-with-99-accuracy/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 text-sm transition-colors"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
                 >
-                  ENDO2025 Conference Report
+                  MedicalUpdateOnline - 7/17/25
                 </a>
                 <a
-                  href="https://example.com/oculai-article-3"
+                  href="https://reachmd.com/news/ai-and-eye-scans-revolutionize-diabetic-and-myopic-eye-disease-screening/2475715/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 text-sm transition-colors"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
                 >
-                  Mobile AI Healthcare Breakthrough
+                  ReachMD - 7/17/25
+                </a>
+                <a
+                  href="https://www.medicaleconomics.com/view/ai-powered-retina-tracker-shows-near-perfect-accuracy-in-detecting-diabetic-eye-disease"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  Medical Economics - 7/17/25
+                </a>
+                <a
+                  href="https://www.healthleadersmedia.com/technology/ai-mobile-tracker-screens-diabetic-eye-disease-99"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  Mirage News - 7/16/25
+                </a>
+                <a
+                  href="https://firstwordhealthtech.com/story/5981373"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  FirstWord HEALTHTECH - 7/15/25
+                </a>
+                <a
+                  href="https://www.endocrine.org/news-and-advocacy/news-room/endo-annual-meeting/endo-2025-press-releases/sethuraj-smart-press-release"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  Endocrine Society - 7/14/25
+                </a>
+                <a
+                  href="https://medicalxpress.com/news/2025-07-ai-powered-application-enables-clinicians.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  Medical XPress - 7/13/25
+                </a>
+                <a
+                  href="https://www.consultant360.com/qas/ai-based-screening-diabetic-retinopathy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  Consultant360 - 7/12/25
+                </a>
+                <a
+                  href="https://www.newswise.com/articles/ai-powered-mobile-retina-tracker-screens-for-diabetic-eye-disease-with-99-accuracy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-blue-600 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  Newswise - 7/8/25
                 </a>
               </div>
             </div>
