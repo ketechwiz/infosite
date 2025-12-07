@@ -270,13 +270,80 @@ export default function Research() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-20 bg-yellow-400 p-12 text-center"
+          className="mt-20 bg-yellow-400 p-12"
         >
-          <Award className="w-16 h-16 mx-auto mb-6 text-black" />
-          <h3 className="text-3xl font-black mb-6 text-black">RESEARCH IMPACT</h3>
-          <p className="text-lg text-black max-w-3xl mx-auto leading-relaxed font-medium">
-            Research presented at major international conferences including IEEE ISBI, Endocrine Society, and Harvard Medical School. Featured in U.S. News & World Report and published in official proceedings, advancing AI-powered medical diagnostics.
-          </p>
+          <div className="text-center mb-12">
+            <Award className="w-16 h-16 mx-auto mb-6 text-black" />
+            <h3 className="text-3xl font-black mb-6 text-black">RESEARCH IMPACT</h3>
+            <p className="text-lg text-black max-w-3xl mx-auto leading-relaxed font-medium">
+              Research presented at major international conferences including IEEE ISBI, Endocrine Society, and Harvard Medical School. Featured in U.S. News & World Report and published in official proceedings, advancing AI-powered medical diagnostics.
+            </p>
+          </div>
+
+          {/* News Articles Section */}
+          <div className="grid md:grid-cols-2 gap-8 mt-12">
+            {/* OncoAI News Articles */}
+            <div>
+              <h4 className="text-2xl font-black mb-6 text-black">OncoAI NEWS ARTICLES</h4>
+              <div className="space-y-3">
+                <a
+                  href="https://www.usnews.com/news/health-news/articles/2024-06-04/ai-tool-detects-cancer-with-nearly-perfect-accuracy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  U.S. News & World Report: AI Tool Detects Cancer
+                </a>
+                <a
+                  href="https://example.com/oncoai-article-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  Medical Journal Feature
+                </a>
+                <a
+                  href="https://example.com/oncoai-article-3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  IEEE ISBI Coverage
+                </a>
+              </div>
+            </div>
+
+            {/* OculAI News Articles */}
+            <div>
+              <h4 className="text-2xl font-black mb-6 text-black">OculAI NEWS ARTICLES</h4>
+              <div className="space-y-3">
+                <a
+                  href="https://example.com/oculai-article-1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  Healthcare Tech Innovation Feature
+                </a>
+                <a
+                  href="https://example.com/oculai-article-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  ENDO2025 Conference Report
+                </a>
+                <a
+                  href="https://example.com/oculai-article-3"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-black hover:bg-gray-900 text-white font-bold py-3 px-4 text-sm transition-colors"
+                >
+                  Mobile AI Healthcare Breakthrough
+                </a>
+              </div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>
