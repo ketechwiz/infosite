@@ -43,9 +43,19 @@ export default function Research() {
       date: "September 2025",
       location: "Houston, TX",
       type: "Live Presentation",
+      organizers: "Rice University Ken Kennedy Institute",
       presentations: [
-        { title: "A novel AI powered HEART: Hypertension Eye Assessment and Risk Tracker for Equitable Detection and Risk Stratification of Hypertensive Retinopathy" },
-        { title: "Simple Mobile AI Retina Tracker, SMART, for equitable eyecare and revolutionizing healthcare" },
+        { 
+          title: "COLAID: A Novel AI-Application for Accurate Detection of Colorectal Cancers",
+          youtubeLink: "https://youtu.be/k5Jebw-6KNA?si=vZntrPtd4S37Afs-"
+        },
+        { 
+          title: "Simple Mobile AI Retina Tracker, SMART, for equitable eyecare and revolutionizing healthcare",
+          youtubeLink: "https://youtu.be/2VlbRA3BazQ?si=DBOXN37Z2VmNoitn"
+        },
+        { 
+          title: "A novel AI powered HEART: Hypertension Eye Assessment and Risk Tracker for Equitable Detection and Risk Stratification of Hypertensive Retinopathy" 
+        },
       ],
     },
     {
