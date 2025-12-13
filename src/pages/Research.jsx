@@ -248,10 +248,10 @@ export default function Research() {
                         <span className="inline-block px-3 py-1 bg-blue-600 text-white font-bold text-xs uppercase">
                           {pres.highlight}
                         </span>
-                                      )}
-                                      {pres.youtubeLink && (
+                        )}
+                        {pres.youtubeLink && (
                           
-                            href={pres.youtubeLink}
+                          <a href={pres.youtubeLink}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-3 py-1 bg-red-600 text-white font-bold text-xs uppercase hover:bg-red-700 transition-colors"
