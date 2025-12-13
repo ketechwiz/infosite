@@ -28,6 +28,7 @@ export default function Research() {
       date: "July 2025",
       location: "San Francisco, CA",
       type: "Oral & Poster Presenter",
+      organizers: "Endocrine Society",
       presentations: [
         {
           title: "A Universally Accessible, Computationally Efficient, Artificial Intelligence Powered Application for Diagnosing Endocrine Cancers",
@@ -63,6 +64,7 @@ export default function Research() {
       date: "April 2025",
       location: "Houston, TX",
       type: "Poster & Live Demonstration",
+      organizers: "Institute of Electrical and Electronics Engineers",
       presentations: [
         { title: "OncoAI: a Universal, Efficient AI Application for Cancer Diagnosis" },
         { title: "Simple Mobile AI Retina Tracker: Redefining Eyecare and Healthcare" },
