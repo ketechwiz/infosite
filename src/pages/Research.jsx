@@ -60,6 +60,22 @@ export default function Research() {
       ],
     },
     {
+      name: "American College of Gastroenterology (ACG 2025)",
+      date: "October 24-29, 2025",
+      location: "Phoenix, AZ",
+      type: "Poster Presentations",
+      organizers: "American College of Gastroenterology",
+      presentations: [
+        { title: "ResNet18-Based Deep Learning for Accurate Classification of Microsatellite Instability in Gastrointestinal Cancers" },
+        { title: "EfficientNetB0-Based Deep Learning Model for Classification of Microsatellite Instability and Stability in Gastrointestinal Cancers" },
+        { title: "A New Era in Colorectal Cancer Diagnostics: EfficientNetB0's Impeccable Performance in Histopathological Diagnosis" },
+        { title: "High-Fidelity Detection of Colorectal Cancer From Histopathological Images Using Artificial Intelligence" },
+        { title: "A Versatile ResNet18-Based AI Application for High-Precision Colorectal Cancer Detection" },
+        { title: "A Pioneering Neural Network Model, ResNet18-Powered Universal Application for Pancreatic Cancer Diagnostics" },
+        { title: "Revolutionizing Early Pancreatic Cancer Detection: EfficientNetB0 Embedded in a Universally Accessible Multiplatform Diagnostic Tool" },
+      ],
+    },
+    {
       name: "IEEE International Symposium on Biomedical Imaging (ISBI 2025)",
       date: "April 2025",
       location: "Houston, TX",
@@ -232,7 +248,18 @@ export default function Research() {
                         <span className="inline-block px-3 py-1 bg-blue-600 text-white font-bold text-xs uppercase">
                           {pres.highlight}
                         </span>
-                      )}
+                                      )}
+                                      {pres.youtubeLink && (
+                          
+                            href={pres.youtubeLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-3 py-1 bg-red-600 text-white font-bold text-xs uppercase hover:bg-red-700 transition-colors"
+                          >
+                            Watch on YouTube
+                            <ExternalLink className="w-3 h-3" />
+                          </a>
+                        )}
                     </div>
                   ))}
                 </div>
