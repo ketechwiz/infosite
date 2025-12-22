@@ -31,7 +31,7 @@ export default function Layout({ children, currentPageName }) {
       <div className="bg-yellow-400 text-black text-center py-3 px-4 font-bold">
         <div className="flex items-center justify-center gap-2 text-sm md:text-base">
           <span>⚡</span>
-          <span>3rd Place at YC Agent Jam 2025 | NASA Space Apps Global Nominee</span>
+          <span>3rd Place at YC Agent Jam 2025 | Co-Founder of 5+ International Organizations | NASA Space Apps Global Nominee</span>
         </div>
       </div>
 
@@ -175,20 +175,20 @@ export default function Layout({ children, currentPageName }) {
               <h3 className="font-black uppercase tracking-wider mb-6 text-yellow-400">Projects</h3>
               <div className="flex flex-col gap-3">
                 <a
-                  href="https://getarc.pro/landing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-yellow-400 transition-colors font-medium flex items-center gap-2"
-                >
-                  Arc <ExternalLink className="w-3 h-3" />
-                </a>
-                <a
                   href="https://www.envirocast.org/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-yellow-400 transition-colors font-medium flex items-center gap-2"
                 >
                   EnviroCast <ExternalLink className="w-3 h-3" />
+                </a>
+                <a
+                  href="https://getarc.pro/landing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors font-medium flex items-center gap-2"
+                >
+                  Arc <ExternalLink className="w-3 h-3" />
                 </a>
                 <a
                   href="https://oncoai.org"
