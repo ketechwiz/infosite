@@ -6,6 +6,22 @@ import { Button } from "@/components/ui/button";
 export default function Projects() {
   const mainProjects = [
     {
+      title: "EnviroCast",
+      tagline: "Quantum-Powered Environmental Intelligence",
+      description:
+        "AI-driven quantum environmental intelligence platform that personalizes weather and pollution insights based on analysis from IBM Quantum. Leading end-to-end technical vision from data infrastructure to adaptive alert systems.",
+      achievement: "NASA Global Nominee",
+      highlights: [
+        "Quantum computing integration via IBM Quantum",
+        "Personalized environmental insights and alerts",
+        "Real-time weather and pollution analysis",
+        "Localized sensor and near-space data collection",
+      ],
+      tech: ["Quantum Computing", "AI/ML", "Data Analysis", "Full-Stack", "Node.js", "Python"],
+      link: "https://www.envirocast.org/",
+      tag: "QUANTUM",
+    },
+    {
       title: "Arc",
       tagline: "Your AI Startup Team in a Chatroom",
       description:
@@ -21,22 +37,6 @@ export default function Projects() {
       tech: ["AI Agents", "Full-Stack", "Real-time Collaboration", "LLMs"],
       link: "https://getarc.pro/landing",
       tag: "AGENTIC",
-    },
-    {
-      title: "EnviroCast",
-      tagline: "Quantum-Powered Environmental Intelligence",
-      description:
-        "AI-driven quantum environmental intelligence platform that personalizes weather and pollution insights based on analysis from IBM Quantum. Leading end-to-end technical vision from data infrastructure to adaptive alert systems.",
-      achievement: "NASA Global Nominee",
-      highlights: [
-        "Quantum computing integration via IBM Quantum",
-        "Personalized environmental insights and alerts",
-        "Real-time weather and pollution analysis",
-        "Localized sensor and near-space data collection",
-      ],
-      tech: ["Quantum Computing", "AI/ML", "Data Analysis", "Full-Stack", "Node.js", "Python"],
-      link: "https://www.envirocast.org/",
-      tag: "QUANTUM",
     },
     {
       title: "OncoAI",
