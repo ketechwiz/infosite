@@ -15,18 +15,18 @@ export default function Home() {
 
   const projects = [
     {
-      title: "Arc",
-      description: "AI platform giving solo founders a full autonomous team. Built at Y Combinator's Agent Jam 2025.",
-      link: "https://getarc.pro",
-      tag: "3RD PLACE YC",
-      color: "blue",
-    },
-    {
       title: "EnviroCast",
       description: "Quantum-powered environmental intelligence platform using IBM Quantum for personalized insights.",
       link: "https://www.envirocast.org/",
       tag: "QUANTUM AI",
       color: "yellow",
+    },
+    {
+      title: "Arc",
+      description: "AI platform giving solo founders a full autonomous team. Built at Y Combinator's Agent Jam 2025.",
+      link: "https://getarc.pro",
+      tag: "3RD PLACE YC",
+      color: "blue",
     }
   ];
 
@@ -55,7 +55,7 @@ export default function Home() {
               <div className="w-20 h-1 bg-blue-600 mb-8"></div>
 
               <p className="text-xl text-gray-300 mb-10 leading-relaxed max-w-xl">
-                High school innovator developing AI-driven solutions for healthcare and environmental intelligence. 3rd place winner at YC Agent Jam 2025.
+                High school innovator developing AI-driven solutions for software and environmental intelligence. 3rd place winner at YC Agent Jam 2025.
               </p>
 
               <div className="flex flex-wrap gap-4">
