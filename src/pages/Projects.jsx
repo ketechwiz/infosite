@@ -199,6 +199,78 @@ export default function Projects() {
                         ))}
                       </div>
 
+                      {/* EnviroCast Platform Links */}
+                      {project.title === "EnviroCast" && (
+                        <div className="mt-8 pt-8 border-t-2 border-gray-800">
+                          <h4 className="text-sm font-black text-yellow-400 mb-6 uppercase tracking-wider">
+                            Platform Ecosystem
+                          </h4>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <a
+                              href="https://www.envirocast.org/environex"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group bg-gray-950 border-2 border-gray-800 hover:border-yellow-400 transition-all p-6 text-center"
+                            >
+                              <svg className="w-8 h-8 mx-auto mb-3 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                              </svg>
+                              <h5 className="font-black mb-2 group-hover:text-yellow-400 transition-colors">EnviroNex</h5>
+                              <p className="text-xs text-gray-400 leading-relaxed">
+                                A next-generation environmental monitoring platform, blending precision data with real-time insights.
+                              </p>
+                            </a>
+
+                            <a
+                              href="https://www.envirocast.org/envirocast-api"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group bg-gray-950 border-2 border-gray-800 hover:border-yellow-400 transition-all p-6 text-center"
+                            >
+                              <svg className="w-8 h-8 mx-auto mb-3 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                              </svg>
+                              <h5 className="font-black mb-2 group-hover:text-yellow-400 transition-colors">EnviroCast API</h5>
+                              <p className="text-xs text-gray-400 leading-relaxed">
+                                Seamlessly connect and integrate environmental intelligence into your applications and services.
+                              </p>
+                            </a>
+
+                            <a
+                              href="https://www.envirocast.org/enviro-ai"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group bg-gray-950 border-2 border-gray-800 hover:border-yellow-400 transition-all p-6 text-center"
+                            >
+                              <svg className="w-8 h-8 mx-auto mb-3 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                              </svg>
+                              <h5 className="font-black mb-2 group-hover:text-yellow-400 transition-colors">Enviro AI</h5>
+                              <p className="text-xs text-gray-400 leading-relaxed">
+                                Advanced conversational predictive modeling and analytics to turn complex environmental data into actionable insight.
+                              </p>
+                            </a>
+
+                            <a
+                              href="https://www.envirocast.org/echo-lab"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group bg-gray-950 border-2 border-gray-800 hover:border-yellow-400 transition-all p-6 text-center"
+                            >
+                              <svg className="w-8 h-8 mx-auto mb-3 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                              </svg>
+                              <h5 className="font-black mb-2 group-hover:text-yellow-400 transition-colors">EchoLab</h5>
+                              <p className="text-xs text-gray-400 leading-relaxed">
+                                An interactive experimentation space for exploring environmental patterns, testing models, and visualizing outcomes with proprietary self-healing quantum algorithms.
+                              </p>
+                            </a>
+                          </div>
+                        </div>
+                      )}
+
+                    </div>
+
                     </div>
 
                     
