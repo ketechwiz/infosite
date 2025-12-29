@@ -207,7 +207,7 @@ export default function Projects() {
                           </h4>
                           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                             <a
-                              href="https://www.envirocast.org/environex"
+                              href="https://nex.envirocast.org/"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="group bg-gray-950 border-2 border-gray-800 hover:border-yellow-400 transition-all p-6 text-center"
@@ -222,7 +222,7 @@ export default function Projects() {
                             </a>
 
                             <a
-                              href="https://www.envirocast.org/envirocast-api"
+                              href="https://api.envirocast.org/"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="group bg-gray-950 border-2 border-gray-800 hover:border-yellow-400 transition-all p-6 text-center"
@@ -237,7 +237,7 @@ export default function Projects() {
                             </a>
 
                             <a
-                              href="https://www.envirocast.org/enviro-ai"
+                              href="https://chat.envirocast.org/"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="group bg-gray-950 border-2 border-gray-800 hover:border-yellow-400 transition-all p-6 text-center"
@@ -252,7 +252,7 @@ export default function Projects() {
                             </a>
 
                             <a
-                              href="https://www.envirocast.org/echo-lab"
+                              href="https://echo.envirocast.org/"
                               target="_blank"
                               rel="noopener noreferrer"
                               className="group bg-gray-950 border-2 border-gray-800 hover:border-yellow-400 transition-all p-6 text-center"
