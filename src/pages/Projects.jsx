@@ -199,6 +199,21 @@ export default function Projects() {
                         ))}
                       </div>
 
+                      {/* YouTube Demo Link */}
+                      {project.youtubeLink && (
+                        <div className="mt-6">
+                          <a
+                            href={project.youtubeLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-4 py-2 bg-red-600 text-white font-bold text-sm uppercase hover:bg-red-700 transition-colors"
+                          >
+                            Watch Project Demo on YouTube
+                            <ExternalLink className="w-4 h-4" />
+                          </a>
+                        </div>
+                      )}
+
                       {/* EnviroCast Platform Links */}
                       {project.title === "EnviroCast" && (
                         <div className="mt-8 pt-8 border-t-2 border-gray-800">
