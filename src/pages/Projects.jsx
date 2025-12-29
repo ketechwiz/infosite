@@ -19,6 +19,7 @@ export default function Projects() {
       ],
       tech: ["Quantum Computing", "AI/ML", "Data Analysis", "Full-Stack", "Node.js", "Python"],
       link: "https://www.envirocast.org/",
+      youtubeLink: "https://www.youtube.com/watch?v=TRLmGXjJbsE",
       tag: "QUANTUM",
     },
     {
