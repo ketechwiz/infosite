@@ -12,19 +12,19 @@ export default function About() {
 
   const experiences = [
     {
+      role: "Co-Founder & CTO",
+      organization: "EnviroCast",
+      period: "Sep 2025 - Present",
+      location: "Houston, TX (Remote)",
+      description: "Leading end-to-end technical vision for AI-driven quantum environmental intelligence platform. Integrated IBM Quantum for personalized weather insights.",
+    },
+    {
       role: "Co-Founder & CMO",
       organization: "Arc",
       period: "2025",
       location: "San Francisco, CA (YC Agent Jam)",
       description: "Built autonomous AI platform at Y Combinator's Agent Jam. 3rd place finish competing against experienced engineers and founders. Youngest team by years.",
       highlight: "3RD PLACE YC",
-    },
-    {
-      role: "Co-Founder & CTO",
-      organization: "EnviroCast",
-      period: "Sep 2025 - Present",
-      location: "Houston, TX (Remote)",
-      description: "Leading end-to-end technical vision for AI-driven quantum environmental intelligence platform. Integrated IBM Quantum for personalized weather insights.",
     },
     {
       role: "Global Nominee",
