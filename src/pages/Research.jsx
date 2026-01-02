@@ -38,6 +38,10 @@ export default function Research() {
           title: "Eyes as Windows to Health: Integrating an Efficient, Generalizable AI Model into a Simple Mobile AI Retina Tracker (SMART) to Revolutionize Ocular and Systemic Healthcare",
         },
       ],
+      articleLink: {
+        url: "https://endocrinenews.endocrine.org/ai-in-the-family/",
+        text: "Featured in Endocrine News article: 'AI in the Family'"
+      },
     },
     {
       name: "Rice University AI in Health Conference (AIHC 2025)",
@@ -248,20 +252,32 @@ export default function Research() {
                         <span className="inline-block px-3 py-1 bg-blue-600 text-white font-bold text-xs uppercase">
                           {pres.highlight}
                         </span>
-                        )}
-                        {pres.youtubeLink && (
-                          
-                          <a href={pres.youtubeLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-3 py-1 bg-red-600 text-white font-bold text-xs uppercase hover:bg-red-700 transition-colors"
-                          >
-                            Watch on YouTube
-                            <ExternalLink className="w-3 h-3" />
-                          </a>
-                        )}
+                      )}
+                      {pres.youtubeLink && (
+                        <a
+                          href={pres.youtubeLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 px-3 py-1 bg-red-600 text-white font-bold text-xs uppercase hover:bg-red-700 transition-colors"
+                        >
+                          Watch on YouTube
+                          <ExternalLink className="w-3 h-3" />
+                        </a>
+                      )}
                     </div>
                   ))}
+                
+                  {conf.articleLink && (
+                    <a
+                      href={conf.articleLink.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block mt-4 px-3 py-2 bg-blue-600 text-white font-bold text-xs uppercase hover:bg-blue-700 transition-colors"
+                    >
+                      {conf.articleLink.text}
+                      <ExternalLink className="w-3 h-3 inline ml-1" />
+                    </a>
+                  )}
                 </div>
 
                 <p className="text-xs text-gray-600 mt-6 font-medium uppercase">
