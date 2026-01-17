@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Wind, Activity, ChevronUp, ChevronDown, MapPin, Thermometer, AlertTriangle, Heart, X } from 'lucide-react';
+import { Wind, Activity, MapPin, Heart, X, Loader2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const getAQIColor = (aqi) => {
@@ -12,6 +12,15 @@ const getAQIColor = (aqi) => {
   return 'text-rose-400';
 };
 
+const getAQIBadgeColor = (aqi) => {
+  if (aqi <= 50) return 'bg-green-500';
+  if (aqi <= 100) return 'bg-yellow-500';
+  if (aqi <= 150) return 'bg-orange-500';
+  if (aqi <= 200) return 'bg-red-500';
+  if (aqi <= 300) return 'bg-purple-500';
+  return 'bg-rose-500';
+};
+
 const getAQIBackground = (aqi) => {
   if (aqi <= 50) return 'from-green-500/20 to-green-600/10';
   if (aqi <= 100) return 'from-yellow-500/20 to-yellow-600/10';
@@ -21,113 +30,176 @@ const getAQIBackground = (aqi) => {
   return 'from-rose-500/20 to-rose-600/10';
 };
 
+const getAQICategory = (aqi) => {
+  if (aqi <= 50) return 'Good';
+  if (aqi <= 100) return 'Moderate';
+  if (aqi <= 150) return 'Unhealthy for Sensitive';
+  if (aqi <= 200) return 'Unhealthy';
+  if (aqi <= 300) return 'Very Unhealthy';
+  return 'Hazardous';
+};
+
 export default function AirQualityButton() {
   const [isOpen, setIsOpen] = useState(false);
   const [forecastData, setForecastData] = useState(null);
   const [healthRisk, setHealthRisk] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [previewData, setPreviewData] = useState(null);
+
+  useEffect(() => {
+    // Fetch preview data on mount
+    fetchPreviewData();
+  }, []);
 
   useEffect(() => {
     if (isOpen && !forecastData) {
-      fetchAirQuality();
+      fetchFullData();
     }
   }, [isOpen]);
 
-  const fetchAirQuality = async () => {
+  const fetchPreviewData = async () => {
+    try {
+      // Try to get user's city, fallback to Houston
+      let city = 'Houston';
+      
+      try {
+        const position = await new Promise((resolve, reject) => {
+          const timeoutId = setTimeout(() => reject(new Error('Timeout')), 5000);
+          navigator.geolocation.getCurrentPosition(
+            (pos) => {
+              clearTimeout(timeoutId);
+              resolve(pos);
+            },
+            (err) => {
+              clearTimeout(timeoutId);
+              reject(err);
+            }
+          );
+        });
+
+        const { latitude, longitude } = position.coords;
+        const geoResponse = await fetch(
+          `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
+        );
+        const geoData = await geoResponse.json();
+        city = geoData.address?.city || geoData.address?.town || geoData.address?.village || 'Houston';
+      } catch (geoError) {
+        console.log('Using default city');
+      }
+
+      // Fetch basic forecast
+      const response = await fetch(
+        `https://naaohlrbreowzrjdwxje.supabase.co/functions/v1/quantum-forecast/forecast?city=${encodeURIComponent(city)}&hours=1`
+      );
+
+      if (!response.ok) throw new Error('API Error');
+
+      const data = await response.json();
+      
+      setPreviewData({
+        city: data.city.name,
+        aqi: data.current.aqi,
+        category: data.current.category
+      });
+    } catch (err) {
+      console.error('Preview fetch error:', err);
+      setPreviewData({
+        city: 'Houston',
+        aqi: 45,
+        category: 'Good'
+      });
+    }
+  };
+
+  const fetchFullData = async () => {
     setLoading(true);
     setError(null);
     
     try {
-      // Get user's location
-      const position = await new Promise((resolve, reject) => {
-        navigator.geolocation.getCurrentPosition(resolve, reject);
-      });
+      let city = previewData?.city || 'Houston';
 
-      const { latitude, longitude } = position.coords;
-
-      // Reverse geocode to get city name (using a free service)
-      const geoResponse = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
-      );
-      const geoData = await geoResponse.json();
-      const city = geoData.address?.city || geoData.address?.town || geoData.address?.village || 'Houston';
-
-      // Fetch air quality forecast from EnviroCast API
+      // Fetch full forecast
       const forecastResponse = await fetch(
-        `https://naaohlrbreowzrjdwxje.supabase.co/functions/v1/quantum-forecast/forecast?city=${encodeURIComponent(city)}&hours=24`
+        `https://naaohlrbreowzrjdwxje.supabase.co/functions/v1/quantum-forecast/forecast?city=${encodeURIComponent(city)}&hours=24&include_health=true`
       );
       
       if (!forecastResponse.ok) {
-        throw new Error('Failed to fetch air quality data');
+        throw new Error('Failed to fetch forecast data');
       }
 
-      const forecastData = await forecastResponse.json();
+      const data = await forecastResponse.json();
 
-      // Format data for display
+      if (!data.success) {
+        throw new Error('API returned unsuccessful response');
+      }
+
       const formattedData = {
         current: {
-          aqi: forecastData.current.aqi,
-          category: forecastData.current.category,
-          dominantPollutant: 'PM2.5',
+          aqi: data.current.aqi,
+          category: data.current.category,
           pollutants: {
-            pm25: forecastData.current.pm25,
-            pm10: forecastData.current.pm10,
-            o3: forecastData.current.o3,
-            no2: forecastData.current.no2,
-            so2: forecastData.current.so2,
-            co: forecastData.current.co
+            pm25: data.current.pm25,
+            pm10: data.current.pm10,
+            o3: data.current.o3,
+            no2: data.current.no2,
+            so2: data.current.so2,
+            co: data.current.co
           }
         },
-        hourly: forecastData.hourly.map(hour => ({
+        hourly: data.hourly.map(hour => ({
           time: new Date(hour.timestamp).toLocaleTimeString('en-US', { hour: 'numeric' }),
           aqi: hour.aqi,
-          category: hour.aqi <= 50 ? 'Good' : hour.aqi <= 100 ? 'Moderate' : hour.aqi <= 150 ? 'Unhealthy for Sensitive' : 'Unhealthy'
+          category: getAQICategory(hour.aqi)
         })),
         location: {
-          city: forecastData.city.name,
-          country: forecastData.city.country
+          city: data.city.name,
+          country: data.city.country
         },
-        quantum: forecastData.quantumMetrics,
-        summary: forecastData.summary
+        quantum: data.quantumMetrics,
+        summary: data.summary
       };
 
-      // Fetch health risk analysis
-      const healthResponse = await fetch(
-        'https://naaohlrbreowzrjdwxje.supabase.co/functions/v1/quantum-forecast/health-risk',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            location: { city },
-            pollutants: forecastData.current,
-            healthProfile: {
-              age: 30,
-              activityLevel: 'moderate',
-              conditions: {}
-            },
-            options: {
-              includeRecommendations: true,
-              includeQuantumMetrics: true
+      // Fetch health risk
+      try {
+        const healthResponse = await fetch(
+          'https://naaohlrbreowzrjdwxje.supabase.co/functions/v1/quantum-forecast/health-risk',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              location: { city },
+              pollutants: data.current,
+              healthProfile: {
+                age: 30,
+                activityLevel: 'moderate',
+                conditions: {}
+              },
+              options: {
+                includeRecommendations: true,
+                includeQuantumMetrics: true
+              }
+            })
+          }
+        );
+
+        if (healthResponse.ok) {
+          const healthData = await healthResponse.json();
+          setHealthRisk({
+            analysis: {
+              riskScore: healthData.analysis.riskScore,
+              riskLevel: healthData.analysis.overallRisk,
+              recommendations: healthData.recommendations?.immediate || []
             }
-          })
+          });
         }
-      );
-
-      const healthData = await healthResponse.json();
-
-      const formattedHealthRisk = {
-        analysis: {
-          riskScore: healthData.analysis.riskScore,
-          riskLevel: healthData.analysis.overallRisk,
-          recommendations: healthData.recommendations.immediate || []
-        }
-      };
+      } catch (healthErr) {
+        console.log('Health risk fetch skipped');
+      }
 
       setForecastData(formattedData);
-      setHealthRisk(formattedHealthRisk);
     } catch (err) {
-      console.error('Air quality fetch error:', err);
+      console.error('Full data fetch error:', err);
       setError('Unable to fetch air quality data. Please try again.');
     } finally {
       setLoading(false);
@@ -136,22 +208,43 @@ export default function AirQualityButton() {
 
   return (
     <>
-      {/* Floating Button */}
+      {/* Compact Preview Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
           "fixed bottom-6 right-6 z-50",
-          "w-16 h-16 rounded-full",
           "bg-gradient-to-br from-blue-600 to-blue-700",
           "shadow-lg hover:shadow-xl",
-          "flex items-center justify-center",
+          "flex items-center gap-3 px-4 py-3 rounded-lg",
           "transition-all duration-300",
           "border-2 border-blue-400/50"
         )}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
       >
-        <Wind className="w-8 h-8 text-white" />
+        <Wind className="w-6 h-6 text-white" />
+        
+        <div className="flex flex-col items-start">
+          <span className="text-xs font-black text-white uppercase tracking-wider">
+            EnviroCast
+          </span>
+          {previewData ? (
+            <span className="text-xs text-blue-200">
+              {previewData.city}
+            </span>
+          ) : (
+            <Loader2 className="w-3 h-3 text-blue-200 animate-spin" />
+          )}
+        </div>
+
+        {previewData && (
+          <div className={cn(
+            "px-3 py-1 rounded font-black text-xs uppercase",
+            getAQIBadgeColor(previewData.aqi)
+          )}>
+            {previewData.category}
+          </div>
+        )}
       </motion.button>
 
       {/* Expanded Panel */}
@@ -184,7 +277,10 @@ export default function AirQualityButton() {
               <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-4 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <Wind className="w-6 h-6 text-white" />
-                  <h3 className="text-lg font-black text-white uppercase">Air Quality</h3>
+                  <div>
+                    <h3 className="text-lg font-black text-white uppercase">EnviroCast</h3>
+                    <p className="text-xs text-blue-100">Quantum Air Quality</p>
+                  </div>
                 </div>
                 <button
                   onClick={() => setIsOpen(false)}
@@ -198,7 +294,7 @@ export default function AirQualityButton() {
               <div className="p-6 overflow-y-auto max-h-[500px]">
                 {loading && (
                   <div className="text-center py-12">
-                    <div className="animate-spin w-12 h-12 border-4 border-blue-400 border-t-transparent rounded-full mx-auto mb-4" />
+                    <Loader2 className="w-12 h-12 text-blue-400 animate-spin mx-auto mb-4" />
                     <p className="text-gray-400">Loading air quality data...</p>
                   </div>
                 )}
@@ -313,15 +409,15 @@ export default function AirQualityButton() {
                       <div className="grid grid-cols-2 gap-3">
                         {Object.entries(forecastData.current.pollutants).map(([key, value]) => (
                           <div key={key} className="bg-gray-900 border border-gray-800 rounded p-3">
-                            <p className="text-xs text-gray-500 uppercase mb-1">{key}</p>
-                            <p className="text-lg font-bold text-white">{value}</p>
+                            <p className="text-xs text-gray-500 uppercase mb-1">{key.toUpperCase()}</p>
+                            <p className="text-lg font-bold text-white">{value.toFixed(1)}</p>
                           </div>
                         ))}
                       </div>
                     </div>
 
                     {/* Health Recommendations */}
-                    {healthRisk && (
+                    {healthRisk && healthRisk.analysis.recommendations.length > 0 && (
                       <div>
                         <div className="flex items-center gap-2 mb-3">
                           <Heart className="w-4 h-4 text-red-400" />
