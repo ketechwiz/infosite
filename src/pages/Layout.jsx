@@ -4,7 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 import { createPageUrl } from "@/utils";
 import { Menu, X, Linkedin, Mail, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import AirQualityButton from "@/components/AirQualityButton";
 
 export default function Layout({ children, currentPageName }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -216,8 +215,6 @@ export default function Layout({ children, currentPageName }) {
           </div>
         </div>
       </footer>
-
-      <AirQualityButton />
     </div>
   );
 }
