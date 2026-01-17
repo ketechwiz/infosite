@@ -264,10 +264,7 @@ export default function Projects() {
                               </div>
                             </div>
                           </details>
-
-                      {/* EnviroCast Platform Links */}
-                      {project.title === "EnviroCast" && (
-                        <div className="mt-8 pt-8 border-t-2 border-gray-800">
+                          
                           <h4 className="text-sm font-black text-yellow-400 mb-6 uppercase tracking-wider">
                             Platform Ecosystem
                           </h4>
