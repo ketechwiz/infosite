@@ -3,40 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Wind, Activity, ChevronUp, ChevronDown, MapPin, Thermometer, AlertTriangle, Heart, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
-interface ForecastData {
-  current: {
-    aqi: number;
-    category: string;
-    dominantPollutant: string;
-    pollutants: {
-      pm25: number;
-      pm10: number;
-      o3: number;
-      no2: number;
-      so2: number;
-      co: number;
-    };
-  };
-  hourly: Array<{
-    time: string;
-    aqi: number;
-    category: string;
-  }>;
-  location: {
-    city: string;
-    country: string;
-  };
-}
-
-interface HealthRiskData {
-  analysis: {
-    riskScore: number;
-    riskLevel: string;
-    recommendations: string[];
-  };
-}
-
-const getAQIColor = (aqi: number): string => {
+const getAQIColor = (aqi) => {
   if (aqi <= 50) return 'text-green-400';
   if (aqi <= 100) return 'text-yellow-400';
   if (aqi <= 150) return 'text-orange-400';
@@ -45,7 +12,7 @@ const getAQIColor = (aqi: number): string => {
   return 'text-rose-400';
 };
 
-const getAQIBackground = (aqi: number): string => {
+const getAQIBackground = (aqi) => {
   if (aqi <= 50) return 'from-green-500/20 to-green-600/10';
   if (aqi <= 100) return 'from-yellow-500/20 to-yellow-600/10';
   if (aqi <= 150) return 'from-orange-500/20 to-orange-600/10';
@@ -56,10 +23,10 @@ const getAQIBackground = (aqi: number): string => {
 
 export default function AirQualityButton() {
   const [isOpen, setIsOpen] = useState(false);
-  const [forecastData, setForecastData] = useState<ForecastData | null>(null);
-  const [healthRisk, setHealthRisk] = useState<HealthRiskData | null>(null);
+  const [forecastData, setForecastData] = useState(null);
+  const [healthRisk, setHealthRisk] = useState(null);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     if (isOpen && !forecastData) {
@@ -73,14 +40,14 @@ export default function AirQualityButton() {
     
     try {
       // Get user's location
-      const position = await new Promise<GeolocationPosition>((resolve, reject) => {
+      const position = await new Promise((resolve, reject) => {
         navigator.geolocation.getCurrentPosition(resolve, reject);
       });
 
       const { latitude, longitude } = position.coords;
 
       // Mock data for demonstration - replace with actual API calls
-      const mockData: ForecastData = {
+      const mockData = {
         current: {
           aqi: Math.floor(Math.random() * 200) + 1,
           category: 'Moderate',
@@ -105,7 +72,7 @@ export default function AirQualityButton() {
         }
       };
 
-      const mockHealthRisk: HealthRiskData = {
+      const mockHealthRisk = {
         analysis: {
           riskScore: 65,
           riskLevel: 'Moderate',
