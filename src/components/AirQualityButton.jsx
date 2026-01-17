@@ -46,48 +46,89 @@ export default function AirQualityButton() {
 
       const { latitude, longitude } = position.coords;
 
-      // Mock data for demonstration - replace with actual API calls
-      const mockData = {
+      // Reverse geocode to get city name (using a free service)
+      const geoResponse = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
+      );
+      const geoData = await geoResponse.json();
+      const city = geoData.address?.city || geoData.address?.town || geoData.address?.village || 'Houston';
+
+      // Fetch air quality forecast from EnviroCast API
+      const forecastResponse = await fetch(
+        `https://naaohlrbreowzrjdwxje.supabase.co/functions/v1/quantum-forecast/forecast?city=${encodeURIComponent(city)}&hours=24`
+      );
+      
+      if (!forecastResponse.ok) {
+        throw new Error('Failed to fetch air quality data');
+      }
+
+      const forecastData = await forecastResponse.json();
+
+      // Format data for display
+      const formattedData = {
         current: {
-          aqi: Math.floor(Math.random() * 200) + 1,
-          category: 'Moderate',
+          aqi: forecastData.current.aqi,
+          category: forecastData.current.category,
           dominantPollutant: 'PM2.5',
           pollutants: {
-            pm25: 35.2,
-            pm10: 45.8,
-            o3: 28.4,
-            no2: 22.1,
-            so2: 12.5,
-            co: 0.8
+            pm25: forecastData.current.pm25,
+            pm10: forecastData.current.pm10,
+            o3: forecastData.current.o3,
+            no2: forecastData.current.no2,
+            so2: forecastData.current.so2,
+            co: forecastData.current.co
           }
         },
-        hourly: Array.from({ length: 24 }, (_, i) => ({
-          time: `${i}:00`,
-          aqi: Math.floor(Math.random() * 150) + 1,
-          category: 'Good'
+        hourly: forecastData.hourly.map(hour => ({
+          time: new Date(hour.timestamp).toLocaleTimeString('en-US', { hour: 'numeric' }),
+          aqi: hour.aqi,
+          category: hour.aqi <= 50 ? 'Good' : hour.aqi <= 100 ? 'Moderate' : hour.aqi <= 150 ? 'Unhealthy for Sensitive' : 'Unhealthy'
         })),
         location: {
-          city: 'Houston',
-          country: 'United States'
-        }
+          city: forecastData.city.name,
+          country: forecastData.city.country
+        },
+        quantum: forecastData.quantumMetrics,
+        summary: forecastData.summary
       };
 
-      const mockHealthRisk = {
+      // Fetch health risk analysis
+      const healthResponse = await fetch(
+        'https://naaohlrbreowzrjdwxje.supabase.co/functions/v1/quantum-forecast/health-risk',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            location: { city },
+            pollutants: forecastData.current,
+            healthProfile: {
+              age: 30,
+              activityLevel: 'moderate',
+              conditions: {}
+            },
+            options: {
+              includeRecommendations: true,
+              includeQuantumMetrics: true
+            }
+          })
+        }
+      );
+
+      const healthData = await healthResponse.json();
+
+      const formattedHealthRisk = {
         analysis: {
-          riskScore: 65,
-          riskLevel: 'Moderate',
-          recommendations: [
-            'Consider reducing prolonged outdoor activities',
-            'Sensitive groups should limit outdoor exposure',
-            'Keep windows closed during peak pollution hours'
-          ]
+          riskScore: healthData.analysis.riskScore,
+          riskLevel: healthData.analysis.overallRisk,
+          recommendations: healthData.recommendations.immediate || []
         }
       };
 
-      setForecastData(mockData);
-      setHealthRisk(mockHealthRisk);
+      setForecastData(formattedData);
+      setHealthRisk(formattedHealthRisk);
     } catch (err) {
-      setError('Unable to fetch air quality data. Please enable location access.');
+      console.error('Air quality fetch error:', err);
+      setError('Unable to fetch air quality data. Please try again.');
     } finally {
       setLoading(false);
     }
@@ -196,6 +237,73 @@ export default function AirQualityButton() {
                         </p>
                       </div>
                     </div>
+
+                    {/* Quantum Metrics */}
+                    {forecastData.quantum && (
+                      <div className="bg-gradient-to-r from-purple-900/20 to-blue-900/20 border border-purple-500/30 rounded-lg p-4">
+                        <div className="flex items-center gap-2 mb-3">
+                          <Activity className="w-4 h-4 text-purple-400" />
+                          <h4 className="text-sm font-black text-purple-400 uppercase">
+                            Quantum Metrics
+                          </h4>
+                        </div>
+                        <div className="grid grid-cols-2 gap-3 text-xs">
+                          <div>
+                            <p className="text-gray-500 uppercase mb-1">Coherence</p>
+                            <p className="text-white font-bold">{(forecastData.quantum.coherenceScore * 100).toFixed(1)}%</p>
+                          </div>
+                          <div>
+                            <p className="text-gray-500 uppercase mb-1">Entanglement</p>
+                            <p className="text-white font-bold">{(forecastData.quantum.entanglementFidelity * 100).toFixed(1)}%</p>
+                          </div>
+                          <div>
+                            <p className="text-gray-500 uppercase mb-1">Accuracy</p>
+                            <p className="text-white font-bold">{(forecastData.quantum.measurementAccuracy * 100).toFixed(1)}%</p>
+                          </div>
+                          <div>
+                            <p className="text-gray-500 uppercase mb-1">Gate Error</p>
+                            <p className="text-white font-bold">{(forecastData.quantum.gateErrorRate * 100).toFixed(2)}%</p>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Summary Stats */}
+                    {forecastData.summary && (
+                      <div className="bg-gray-900 border border-gray-800 rounded-lg p-4">
+                        <h4 className="text-sm font-black text-yellow-400 uppercase mb-3">
+                          24-Hour Summary
+                        </h4>
+                        <div className="space-y-2 text-sm">
+                          <div className="flex justify-between">
+                            <span className="text-gray-400">Peak AQI:</span>
+                            <span className={cn("font-bold", getAQIColor(forecastData.summary.peakAQI.value))}>
+                              {forecastData.summary.peakAQI.value} (Hour {forecastData.summary.peakAQI.hour})
+                            </span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-400">Lowest AQI:</span>
+                            <span className={cn("font-bold", getAQIColor(forecastData.summary.lowestAQI.value))}>
+                              {forecastData.summary.lowestAQI.value} (Hour {forecastData.summary.lowestAQI.hour})
+                            </span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-gray-400">Average:</span>
+                            <span className={cn("font-bold", getAQIColor(forecastData.summary.averageAQI))}>
+                              {forecastData.summary.averageAQI}
+                            </span>
+                          </div>
+                          {forecastData.summary.recommendedOutdoorWindow && (
+                            <div className="mt-3 pt-3 border-t border-gray-800">
+                              <p className="text-xs text-gray-500 mb-1">Best outdoor window:</p>
+                              <p className="text-green-400 font-bold">
+                                {forecastData.summary.recommendedOutdoorWindow.start}:00 - {forecastData.summary.recommendedOutdoorWindow.end}:00
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
 
                     {/* Pollutants */}
                     <div>
