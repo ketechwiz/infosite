@@ -215,6 +215,56 @@ export default function Projects() {
                         </div>
                       )}
 
+                      {/* EnviroCast Competition Wins */}
+                      {project.title === "EnviroCast" && (
+                        <div className="mt-8 pt-8 border-t-2 border-gray-800">
+                          <details className="group mb-8">
+                            <summary className="cursor-pointer list-none flex items-center justify-between text-sm font-black text-yellow-400 uppercase tracking-wider hover:text-yellow-500 transition-colors">
+                              <span>Competition Wins (3)</span>
+                              <svg className="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                              </svg>
+                            </summary>
+                            <div className="mt-6 space-y-4">
+                              <div className="bg-black border-2 border-gray-800 p-4">
+                                <div className="flex items-start gap-3">
+                                  <div className="w-8 h-8 bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                                    <span className="text-black font-black text-sm">1</span>
+                                  </div>
+                                  <div>
+                                    <h5 className="font-black text-white mb-1">NASA International Space Apps Challenge</h5>
+                                    <p className="text-sm text-gray-400 mb-2">Texas State Location - Global Nominee</p>
+                                    <span className="inline-block px-2 py-1 bg-blue-600 text-white text-xs font-bold uppercase">Global Recognition</span>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div className="bg-black border-2 border-gray-800 p-4">
+                                <div className="flex items-start gap-3">
+                                  <div className="w-8 h-8 bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                                    <span className="text-black font-black text-sm">2</span>
+                                  </div>
+                                  <div>
+                                    <h5 className="font-black text-white mb-1">STEMpower Hacks Virtual Hackathon</h5>
+                                    <p className="text-sm text-gray-400">International virtual competition</p>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div className="bg-black border-2 border-gray-800 p-4">
+                                <div className="flex items-start gap-3">
+                                  <div className="w-8 h-8 bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                                    <span className="text-black font-black text-sm">3</span>
+                                  </div>
+                                  <div>
+                                    <h5 className="font-black text-white mb-1">Missing Amps Winter Classic Hackathon</h5>
+                                    <p className="text-sm text-gray-400">Winter hackathon competition</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </details>
+
                       {/* EnviroCast Platform Links */}
                       {project.title === "EnviroCast" && (
                         <div className="mt-8 pt-8 border-t-2 border-gray-800">
