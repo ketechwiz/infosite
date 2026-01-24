@@ -245,28 +245,52 @@ export default function Projects() {
                                     <span className="text-black font-black text-sm">2</span>
                                   </div>
                                   <div>
-                                    <h5 className="font-black text-white mb-1">Sustain-a-thon International Hackathon</h5>
-                                    <p className="text-sm text-gray-400">International climate app competition</p>
+                                    <h5 className="font-black text-white mb-1">Texas State Congressional Apps Challenge</h5>
+                                    <p className="text-sm text-gray-400 mb-2">Regional 2nd Place</p>
                                   </div>
                                 </div>
                               </div>
-                              
-                              <div className="bg-black border-2 border-gray-800 p-4">
-                                <div className="flex items-start gap-3">
-                                  <div className="w-8 h-8 bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                                    <span className="text-black font-black text-sm">2</span>
-                                  </div>
-                                  <div>
-                                    <h5 className="font-black text-white mb-1">STEMpower Hacks Virtual Hackathon</h5>
-                                    <p className="text-sm text-gray-400">International virtual competition</p>
-                                  </div>
-                                </div>
-                              </div>
-                              
+
                               <div className="bg-black border-2 border-gray-800 p-4">
                                 <div className="flex items-start gap-3">
                                   <div className="w-8 h-8 bg-yellow-400 flex items-center justify-center flex-shrink-0">
                                     <span className="text-black font-black text-sm">3</span>
+                                  </div>
+                                  <div>
+                                    <h5 className="font-black text-white mb-1">Sustain-a-thon International Hackathon</h5>
+                                    <p className="text-sm text-gray-400">International 1st place</p>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="bg-black border-2 border-gray-800 p-4">
+                                <div className="flex items-start gap-3">
+                                  <div className="w-8 h-8 bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                                    <span className="text-black font-black text-sm">4</span>
+                                  </div>
+                                  <div>
+                                    <h5 className="font-black text-white mb-1">December AI Challenge Virtual Hackathon</h5>
+                                    <p className="text-sm text-gray-400">AI innovation challenge</p>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div className="bg-black border-2 border-gray-800 p-4">
+                                <div className="flex items-start gap-3">
+                                  <div className="w-8 h-8 bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                                    <span className="text-black font-black text-sm">5</span>
+                                  </div>
+                                  <div>
+                                    <h5 className="font-black text-white mb-1">STEMpower Hacks Virtual Hackathon</h5>
+                                    <p className="text-sm text-gray-400">Agricultural project competition</p>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div className="bg-black border-2 border-gray-800 p-4">
+                                <div className="flex items-start gap-3">
+                                  <div className="w-8 h-8 bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                                    <span className="text-black font-black text-sm">6</span>
                                   </div>
                                   <div>
                                     <h5 className="font-black text-white mb-1">Missing Amps Winter Classic Hackathon</h5>
