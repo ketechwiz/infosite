@@ -94,9 +94,9 @@ export default function Research() {
 
   const awards = [
     {
-      title: "State Qualifier, Creative Problem-Solving",
+      title: "Regional 1st Place, Creative Problem-Solving",
       issuer: "Texas HOSA",
-      date: "November 2025",
+      date: "January 2026",
     },
     {
       title: "Gold Medal for Biomedical Engineering Research",
