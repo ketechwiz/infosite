@@ -220,7 +220,7 @@ export default function Projects() {
                         <div className="mt-8 pt-8 border-t-2 border-gray-800">
                           <details className="group mb-8">
                             <summary className="cursor-pointer list-none flex items-center justify-between text-sm font-black text-yellow-400 uppercase tracking-wider hover:text-yellow-500 transition-colors">
-                              <span>Competition Wins (4)</span>
+                              <span>Competition Wins (7)</span>
                               <svg className="w-5 h-5 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                               </svg>
@@ -269,6 +269,18 @@ export default function Projects() {
                                     <span className="text-black font-black text-sm">4</span>
                                   </div>
                                   <div>
+                                    <h5 className="font-black text-white mb-1">Washington State Virtual Hackathon</h5>
+                                    <p className="text-sm text-gray-400">International online competition</p>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="bg-black border-2 border-gray-800 p-4">
+                                <div className="flex items-start gap-3">
+                                  <div className="w-8 h-8 bg-yellow-400 flex items-center justify-center flex-shrink-0">
+                                    <span className="text-black font-black text-sm">5</span>
+                                  </div>
+                                  <div>
                                     <h5 className="font-black text-white mb-1">December AI Challenge Virtual Hackathon</h5>
                                     <p className="text-sm text-gray-400">AI innovation challenge</p>
                                   </div>
@@ -278,7 +290,7 @@ export default function Projects() {
                               <div className="bg-black border-2 border-gray-800 p-4">
                                 <div className="flex items-start gap-3">
                                   <div className="w-8 h-8 bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                                    <span className="text-black font-black text-sm">5</span>
+                                    <span className="text-black font-black text-sm">6</span>
                                   </div>
                                   <div>
                                     <h5 className="font-black text-white mb-1">STEMpower Hacks Virtual Hackathon</h5>
@@ -290,7 +302,7 @@ export default function Projects() {
                               <div className="bg-black border-2 border-gray-800 p-4">
                                 <div className="flex items-start gap-3">
                                   <div className="w-8 h-8 bg-yellow-400 flex items-center justify-center flex-shrink-0">
-                                    <span className="text-black font-black text-sm">6</span>
+                                    <span className="text-black font-black text-sm">7</span>
                                   </div>
                                   <div>
                                     <h5 className="font-black text-white mb-1">Missing Amps Winter Classic Hackathon</h5>
