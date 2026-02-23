@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { createPageUrl } from "@/utils";
@@ -22,6 +21,7 @@ export default function Layout({ children, currentPageName }) {
     { name: "Home", path: createPageUrl("Home") },
     { name: "Projects", path: createPageUrl("Projects") },
     { name: "Research", path: createPageUrl("Research") },
+    { name: "Conferences", path: createPageUrl("Conferences") },
     { name: "About", path: createPageUrl("About") },
   ];
 
@@ -51,7 +51,7 @@ export default function Layout({ children, currentPageName }) {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -181,6 +181,14 @@ export default function Layout({ children, currentPageName }) {
                   className="text-gray-400 hover:text-yellow-400 transition-colors font-medium flex items-center gap-2"
                 >
                   EnviroCast <ExternalLink className="w-3 h-3" />
+                </a>
+                <a
+                  href="https://geo.envirocast.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-yellow-400 transition-colors font-medium flex items-center gap-2"
+                >
+                  EnviroCast GEO <ExternalLink className="w-3 h-3" />
                 </a>
                 <a
                   href="https://getarc.pro/landing"
