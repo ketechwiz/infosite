@@ -246,6 +246,117 @@ export default function Home() {
         </div>
       </section>
 
+      {/* International Conferencing Section */}
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gray-950 border-t-4 border-yellow-400">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-16"
+          >
+            <div className="mb-6">
+              <span className="inline-block px-4 py-2 bg-blue-600 text-white font-black text-sm uppercase tracking-wider">
+                Global Stage
+              </span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-black mb-4">
+              INTERNATIONAL <span className="text-yellow-400">CONFERENCING</span>
+            </h2>
+            <div className="w-20 h-1 bg-blue-600 mb-6"></div>
+            <p className="text-xl text-gray-300 max-w-3xl leading-relaxed">
+              Working internationally to build the future and support innovators — from organizing global conferences to presenting research at the world's leading medical and technology institutions.
+            </p>
+          </motion.div>
+
+          {/* GEO Highlight Card */}
+          <motion.a
+            href="https://geo.envirocast.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="group block border-4 border-yellow-400 bg-black p-8 lg:p-12 mb-10 hover:bg-gray-950 transition-all"
+          >
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-8">
+              <div>
+                <span className="inline-block px-3 py-1 bg-yellow-400 text-black font-black text-xs uppercase tracking-wider mb-4">
+                  Founder &amp; Organizer
+                </span>
+                <h3 className="text-3xl lg:text-4xl font-black mb-2 group-hover:text-yellow-400 transition-colors">
+                  EnviroCast GEO
+                </h3>
+                <p className="text-blue-400 font-bold uppercase tracking-wider text-sm mb-2">
+                  Global Engineering Outlook
+                </p>
+                <p className="text-gray-400 text-sm">geo.envirocast.org</p>
+              </div>
+              <div className="flex items-center gap-2 text-yellow-400 font-black text-sm uppercase shrink-0">
+                <span>Visit GEO</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+              </div>
+            </div>
+            <p className="text-gray-300 text-lg leading-relaxed mb-10 max-w-3xl">
+              An international conference series designed to explore the most pressing and promising frontiers of technology. Hosting live virtual conferences and hackathons — inviting global leaders, innovators, and builders to think boldly about what's next.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { number: "36", label: "Worldwide Speakers" },
+                { number: "117", label: "Hackathon Participants" },
+                { number: "1", label: "Conferences Held" },
+                { number: "12h 20m", label: "Conferencing Hours" },
+              ].map((stat, i) => (
+                <div key={i} className="text-center border-2 border-gray-800 p-4 bg-gray-950">
+                  <div className="text-3xl lg:text-4xl font-black text-yellow-400 mb-1">{stat.number}</div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-gray-400">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </motion.a>
+
+          {/* Research Conferences Strip */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mb-12"
+          >
+            <p className="text-xs font-black uppercase tracking-widest text-gray-600 mb-6">Also Presented At</p>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              {[
+                { name: "SAIL 2025", org: "Harvard Med School", presentations: 2 },
+                { name: "ENDO 2025", org: "Endocrine Society", presentations: 2 },
+                { name: "AIHC 2025", org: "Rice University", presentations: 3 },
+                { name: "ACG 2025", org: "Amer. College of Gastro.", presentations: 7 },
+                { name: "ISBI 2025", org: "IEEE", presentations: 2 },
+              ].map((conf, i) => (
+                <div key={i} className="bg-black border-2 border-gray-800 hover:border-blue-600 transition-colors p-4 text-center">
+                  <div className="text-base font-black text-white mb-1">{conf.name}</div>
+                  <div className="text-xs text-gray-500 mb-3 leading-tight">{conf.org}</div>
+                  <div className="text-2xl font-black text-blue-400">{conf.presentations}</div>
+                  <div className="text-xs text-gray-600 uppercase font-bold">Presentations</div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
+            <Link to={createPageUrl("Conferences")}>
+              <Button size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-black font-black px-10">
+                EXPLORE ALL CONFERENCES
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="px-4 sm:px-6 lg:px-8 py-20 bg-yellow-400">
         <div className="max-w-4xl mx-auto text-center">
