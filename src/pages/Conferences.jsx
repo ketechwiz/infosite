@@ -32,8 +32,8 @@ export default function Conferences() {
       dates: "February 15–16, 2026",
       location: "Virtual",
       description:
-        "Our flagship event focusing on the intersection of AI, environmental science, and sustainable development. Experience the future, today.",
-      link: "https://geo.envirocast.org/",
+        "Our flagship event focusing on the development and promotion of innovation and pushing boundaries. Experience the future, today.",
+      link: "https://geo.envirocast.org/furthering-the-future/",
       watchLinks: [
         { label: "Watch Day 1", url: "https://www.youtube.com/watch?v=MzdCUdKYaIE" },
         { label: "Watch Day 2", url: "https://www.youtube.com/watch?v=_78AWmt2aqg" },
