@@ -8,6 +8,8 @@ import Research from "./Research";
 
 import About from "./About";
 
+import Conferences from "./Conferences";
+
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 
 const PAGES = {
@@ -19,6 +21,8 @@ const PAGES = {
     Research: Research,
     
     About: About,
+
+    Conferences: Conferences,
     
 }
 
@@ -53,7 +57,10 @@ function PagesContent() {
                 
                 <Route path="/Research" element={<Research />} />
                 
+                <Route path="/Conferences" element={<Conferences />} />
+                
                 <Route path="/About" element={<About />} />
+
                 
             </Routes>
         </Layout>
